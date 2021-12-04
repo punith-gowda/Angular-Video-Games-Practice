@@ -1,0 +1,17 @@
+<div class="search-container">
+  <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <span class="logo" routerLink="/"> V-Games </span>
+    <span class="logo-behind" routerLink="/"> V-Games </span>
+    <input
+      type="text"
+      name="search"
+      placeholder="Search"
+      class="search-input"
+      ngModel
+    />
+    <button class="search-button">Search</button>
+  </form>
+</div>
+<div *ngIf="loadService.isLoading | async" class="loader-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
